@@ -7,8 +7,8 @@
   --main-color: rgb(255, 48, 127);
   --secondary-color: rgb(184, 38, 94);
   --linear-gradient-color: 90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1);
-  --transition-duration: 0.8s;
-  --big-transition-duration: 1.5s;
+  --transition-duration: 0.4s;
+  --big-transition-duration: 1s;
   --section-padding: 2rem 0;
 }
 
@@ -44,6 +44,40 @@ a {
 
 i {
   color: var(--white-color);
+}
+
+input, textarea, select {
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+select:focus {
+  box-shadow: 0 0 10px 3px var(--main-color);
+}
+
+input::placeholder, textarea::placeholder {
+  transition: var(--transition-duration);
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  opacity: 0;
+}
+
+form .form-btn {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+form .form-btn:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+form .form-btn:focus {
+    background-color: var(--main-color);
+  border-color: var(--main-color);
 }
 
 .btn {
@@ -91,6 +125,17 @@ i {
   width: 170%;
   height: 2px;
   background-color: rgb(255, 115, 0);
+}
+
+.contact-us {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.contact-us form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 540px) {
