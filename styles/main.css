@@ -6,7 +6,8 @@
   --low-alpha-black: rgba(0, 0, 0, 0.5);
   --main-color: rgb(255, 48, 127);
   --secondary-color: rgb(184, 38, 94);
-  --transition-duration: 0.5s;
+  --linear-gradient-color: 90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1);
+  --transition-duration: 0.8s;
   --big-transition-duration: 1.5s;
   --section-padding: 2rem 0;
 }
@@ -16,6 +17,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   font-family: "Jua", Arial;
 }
 
@@ -24,7 +27,7 @@ html {
 }
 
 body {
-  background-color: rgb(40, 98, 131);
+  background-color: rgb(35, 108, 150);
 }
 
 ul li {
@@ -51,17 +54,25 @@ i {
   border-radius: 1rem;
   cursor: pointer;
   font-size: 1.1rem;
-  transition: var(--transition-duration);
 }
 
 .btn:hover {
   background-color: var(--main-color);
 }
 
+.btn-primary {
+  border-color: black;
+}
+
+.btn-primary:hover {
+  border-color: var(--main-color);
+}
+
 .main-title {
   color: white;
   text-align: center;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .main-title h2 {
@@ -81,6 +92,43 @@ i {
   height: 2px;
   background-color: rgb(255, 115, 0);
 }
+
+@media screen and (max-width: 540px) {
+  .main-title h2::after {
+    left: calc((100% - 100%) / 2);
+    width: 100%;
+  }
+}
+/*! Intro Styles */
+.intro {
+  position: absolute;
+  inset: 0;
+  background-color: var(--main-color);
+  z-index: 1000;
+}
+
+.intro-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.intro-content h1 {
+  color: var(--white-color);
+}
+
+.intro-content .btn {
+  border-color: var(--white-color);
+  transition: var(--transition-duration);
+  margin-top: 1rem;
+}
+
+.intro-content .btn:hover {
+  background-color: white;
+  color: var(--main-color);
+}
 /*! Header Styles */
 header {
   position: fixed;
@@ -94,14 +142,14 @@ header {
   z-index: 999;
 }
 
-header:hover {
-  width: 25%;
-  padding-bottom: 0;
-}
-
 header span {
   opacity: 0;
   transition: var(--transition-duration);
+}
+
+header:hover {
+  width: 25%;
+  padding-bottom: 0;
 }
 
 header nav {
@@ -226,10 +274,22 @@ header nav ul li:hover .games-menu {
   position: relative;
   overflow: hidden;
   height: 1000px;
+  min-width: 337px;
 }
 
 .gameplay .gameplay-cards .gameplay-card img {
   height: 100%;
+}
+
+@media screen and (max-width: 505px) {
+  .gameplay .gameplay-cards .gameplay-card {
+    width: 330px;
+  }
+
+  .gameplay .gameplay-cards .gameplay-card img {
+    height: 100%;
+    width: 330px;
+  }
 }
 
 .gameplay .gameplay-cards .gameplay-card::after {
@@ -241,7 +301,7 @@ header nav ul li:hover .games-menu {
   right: 0;
   top: 0;
   bottom: 50%;
-  background: linear-gradient(90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1));
+  background: linear-gradient(var(--linear-gradient-color));
   color: var(--white-color);
   transition: var(--big-transition-duration);
 }
@@ -255,7 +315,7 @@ header nav ul li:hover .games-menu {
   right: 0;
   bottom: 0;
   top: 50%;
-  background: linear-gradient(90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1));
+  background: linear-gradient(var(--linear-gradient-color));
   color: var(--white-color);
   transition: var(--big-transition-duration);
 }
@@ -269,6 +329,122 @@ header nav ul li:hover .games-menu {
   transform: skew(90deg);
   transform-origin: bottom;
 }
+/*! Racing and Zombie Styles */
+.racing,
+.zombie,
+.action {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.racing .racing-cards,
+.zombie .zombie-cards,
+.action .action-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.racing .racing-cards .racing-card {
+  height: 800px;
+  position: relative;
+}
+
+.racing .racing-cards .racing-card img {
+  height: 800px;
+  width: 450px;
+}
+/* Racing Middle Image */
+.racing .racing-cards .racing-card.middle-car {
+  height: 675px;
+}
+@media screen and (max-width: 1460px) {
+  .racing .racing-cards .racing-card.middle-car {
+    height: 800px;
+  }
+}
+
+.racing .racing-cards .racing-card img,
+.zombie .zombie-cards .zombie-card img,
+.action .action-cards .action-card img {
+  height: 100%;
+}
+
+.racing .racing-cards .racing-card .overlay,
+.zombie .zombie-cards .zombie-card .overlay,
+.action .action-cards .action-card .overlay {
+  position: absolute;
+  inset: 0;
+  top: 100%;
+  background: linear-gradient(var(--linear-gradient-color));
+  transition: var(--big-transition-duration);
+}
+
+.racing .racing-cards .racing-card:hover .overlay,
+.zombie .zombie-cards .zombie-card:hover .overlay,
+.action .action-cards .action-card:hover .overlay {
+  top: 0;
+}
+
+.racing .racing-cards .racing-card .btn,
+.zombie .zombie-cards .zombie-card .btn,
+.action .action-cards .action-card .btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: var(--transition-duration) ease-in;
+}
+
+.racing .racing-cards .racing-card:hover .btn,
+.zombie .zombie-cards .zombie-card:hover .btn,
+.action .action-cards .action-card:hover .btn {
+  opacity: 1;
+}
+
+.action {
+  padding-bottom: 5rem;
+}
+
+/* Zombie Middle Image */
+.zombie .zombie-cards .zombie-card {
+  height: 675px;
+  position: relative;
+}
+
+.zombie .zombie-cards .zombie-card.middle-zombie {
+  height: 800px;
+}
+@media screen and (max-width: 1460px) {
+  .zombie .zombie-cards .zombie-card {
+    height: 800px;
+    position: relative;
+  }
+}
+
+/* Action Middle Image */
+.action .action-cards .action-card {
+  height: 800px;
+  position: relative;
+}
+
+.action .action-cards .action-card img {
+  height: 100%;
+  width: 450px;
+}
+
+.action .action-cards .action-card.middle-action {
+  transform: translateY(35px);
+}
+@media screen and (max-width: 1460px) {
+  .action .action-cards .action-card.middle-action {
+    transform: translateY(0);
+  }
+}
 /*! Animations */
 @keyframes rotate {
   0% {
@@ -280,7 +456,7 @@ header nav ul li:hover .games-menu {
 }
 
 /*todo Media Queries */
-@media screen and (min-width: 500px) and (max-width: 1366px) {
+@media screen and (min-width: 300px) and (max-width: 1366px) {
   header {
     padding-bottom: 7.5rem;
     width: 15%;
@@ -292,6 +468,10 @@ header nav ul li:hover .games-menu {
 
   header:hover nav .logo img {
     width: 200px;
+  }
+
+  .gameplay .gameplay-cards .gameplay-card {
+    height: 600px;
   }
 }
 
@@ -343,5 +523,23 @@ header nav ul li:hover .games-menu {
 
   .landing .overlay .landing-content .btn {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .racing .racing-cards .racing-card,
+  .racing .racing-cards .racing-card.middle-car,
+  .zombie .zombie-cards .zombie-card,
+  .zombie .zombie-cards .zombie-card.middle-zombie,
+  .action .action-cards .action-card,
+  .action .action-cards .action-card.middle-action {
+    max-height: 600px;
+    max-width: 337px;
+  }
+
+  .racing .racing-cards .racing-card img,
+  .action .action-cards .action-card img {
+    max-height: 600px;
+    max-width: 337px;
   }
 }

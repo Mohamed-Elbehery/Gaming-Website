@@ -14,5 +14,4 @@ const handleToggleClick = () => {
   }
 }
 
-headerToggler.addEventListener('click', handleToggleClick)
-
+headerToggler.addEventListener('click', handleToggleClick);

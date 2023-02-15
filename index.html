@@ -13,62 +13,131 @@
     <title>Gaming Website</title>
   </head>
   <body>
-    <!--! Header Section -->
-    <header>
-      <nav>
-        <div class="logo">
-          <a href="#"><img src="./assets/logo.png" alt="logo" /></a>
+    <main>
+      <!--! Header Section -->
+      <header>
+        <nav>
+          <div class="logo">
+            <a href="#"><img src="./assets/logo.png" alt="logo" /></a>
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+              <a>Games</a> <i class="fa-solid fa-caret-down"></i>
+              <ul class="games-menu">
+                <li><a href="#racing">Racing</a></li>
+                <li><a href="#zombie">Zombie</a></li>
+                <li><a href="#action">Action</a></li>
+              </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+          </ul>
+        </nav>
+        <span id="header-toggler"><i class="fa-solid fa-caret-left"></i></span>
+      </header>
+      <section class="landing">
+        <div class="overlay">
+          <div class="landing-content">
+            <h1>Welcome to our <span>Games</span></h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo
+              veritatis asperiores itaque numquam?
+            </p>
+            <a href="#gameplay" class="btn">Go To Play</a>
+          </div>
         </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li>
-            <a>Games</a> <i class="fa-solid fa-caret-down"></i>
-            <ul class="games-menu">
-              <li><a href="#racing">Racing</a></li>
-              <li><a href="#zombie">Zombie</a></li>
-              <li><a href="#action">Action</a></li>
-            </ul>
-          </li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
-        </ul>
-      </nav>
-      <span id="header-toggler"><i class="fa-solid fa-caret-left"></i></span>
-    </header>
-    <section class="landing">
-      <div class="overlay">
-        <div class="landing-content">
-          <h1>Welcome to our <span>Games</span></h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo
-            veritatis asperiores itaque numquam?
-          </p>
-          <a href="#gameplay" class="btn">Go To Play</a>
+      </section>
+      <section class="gameplay" id="gameplay">
+        <div class="main-title">
+          <h2>Game Play</h2>
         </div>
-      </div>
-    </section>
-    <section class="gameplay" id="gameplay">
-      <div class="main-title">
-        <h2>Game Play</h2>
-      </div>
-      <div class="gameplay-cards">
-        <div class="gameplay-card">
-          <img src="./assets/ab1.jfif" alt="game-background" />
+        <div class="gameplay-cards">
+          <div class="gameplay-card">
+            <img src="./assets/ab1.jfif" alt="game-background" />
+          </div>
+          <div class="gameplay-card">
+            <img src="./assets/ab2.jfif" alt="game-background" />
+          </div>
+          <div class="gameplay-card">
+            <img src="./assets/ab3.jfif" alt="game-background" />
+          </div>
+          <div class="gameplay-card">
+            <img src="./assets/ab4.jfif" alt="game-background" />
+          </div>
+          <div class="gameplay-card">
+            <img src="./assets/ab5.jfif" alt="game-background" />
+          </div>
         </div>
-        <div class="gameplay-card">
-          <img src="./assets/ab2.jfif" alt="game-background" />
+      </section>
+      <!--! Racing Section -->
+      <section class="racing" id="racing">
+        <div class="main-title">
+          <h2>Racing</h2>
         </div>
-        <div class="gameplay-card">
-          <img src="./assets/ab3.jfif" alt="game-background" />
+        <div class="racing-cards">
+          <div class="racing-card">
+            <img src="./assets/ra2.jfif" alt="car" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Need For Speed</button>
+          </div>
+          <div class="racing-card middle-car">
+            <img src="./assets/re1.jfif" alt="car" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Asphalt 9</button>
+          </div>
+          <div class="racing-card">
+            <img src="./assets/re3.jfif" alt="car" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Asphalt 9 Block Wave</button>
+          </div>
         </div>
-        <div class="gameplay-card">
-          <img src="./assets/ab4.jfif" alt="game-background" />
+      </section>
+      <section class="zombie" id="zombie">
+        <div class="main-title">
+          <h2>Zombie</h2>
         </div>
-        <div class="gameplay-card">
-          <img src="./assets/ab5.jfif" alt="game-background" />
+        <div class="zombie-cards">
+          <div class="zombie-card">
+            <img src="./assets/zo1.jfif" alt="zombie-wave1" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Zombie Wave l</button>
+          </div>
+          <div class="zombie-card middle-zombie">
+            <img src="./assets/zo2.jfif" alt="zombie-wave2" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Zombie Wave ll</button>
+          </div>
+          <div class="zombie-card">
+            <img src="./assets/zo3.jfif" alt="zombie-wave3" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Zombie Wave lll</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="action" id="action">
+        <div class="main-title">
+          <h2>Action</h2>
+        </div>
+        <div class="action-cards">
+          <div class="action-card">
+            <img src="./assets/ac1.jfif" alt="action-wave1" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Tomb Raider</button>
+          </div>
+          <div class="action-card middle-action">
+            <img src="./assets/ac2.jfif" alt="action-wave2" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">GTA V</button>
+          </div>
+          <div class="action-card">
+            <img src="./assets/ac3.jfif" alt="action-wave3" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">God Of War 4</button>
+          </div>
+        </div>
+      </section>
+    </main>
     <script
       src="https://kit.fontawesome.com/77380724c1.js"
       crossorigin="anonymous"
