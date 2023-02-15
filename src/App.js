@@ -18,10 +18,33 @@ const handleToggleClick = () => {
 headerToggler.addEventListener('click', handleToggleClick);
 
 // //! Handling the Contact Us Form
-const gameName = document.querySelector('input[name="game-name"]');
-const formSelect = document.querySelector('#contact-us form select');
+const gameName = document.querySelector('input[name="gameName"]');
+const formSelect = document.querySelector('select[name="formSelect"]');
+const formMessage = document.querySelector('textarea[name="formMessage"]');
+const query = {};
 const submit = document.querySelector('button.form-btn');
 
-submit.addEventListener('click', (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
-});
+  if(gameName.value && formSelect.value) {
+    query[gameName.name] = gameName.value;
+    query[formSelect.name] = formSelect.value;
+    query[formMessage.name] = formMessage.value;
+    gameName.value = formMessage.value = '';
+    formSelect.value = 'Select Game Category';
+
+    console.log(query);
+
+    const res = await fetch("http://localhost:3000/games", {
+      method: "POST",
+      body: JSON.stringify(query),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    });
+    const data = await res.json();
+    console.log(data);
+  }
+}
+
+submit.addEventListener('click', handleSubmit);

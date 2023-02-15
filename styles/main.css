@@ -492,6 +492,7 @@ header nav ul li:hover .games-menu {
   width: 70%;
   margin: 0 auto;
   padding: 2rem 0;
+  animation: go-up-down 1s infinite alternate;
 }
 
 @media screen and (max-width: 1460px) {
@@ -508,6 +509,7 @@ header nav ul li:hover .games-menu {
 .contact-us form .form-btn {
   background-color: var(--main-color);
   color: var(--white-color);
+  transition: var(--transition-duration);
 }
 
 .contact-us form .form-btn:hover {
@@ -515,7 +517,7 @@ header nav ul li:hover .games-menu {
   border-color: var(--secondary-color);
 }
 
-.contact-us form .form-btn:focus {
+.contact-us form .form-btn:active {
   background-color: var(--main-color);
   border-color: var(--main-color);
 }
@@ -541,16 +543,6 @@ header nav ul li:hover .games-menu {
 .contact-us form input:hover {
   border-color: var(--main-color);
 }
-/*! Animations */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-}
-
 /*todo Media Queries */
 @media screen and (min-width: 300px) and (max-width: 1366px) {
   header {
@@ -637,5 +629,15 @@ header nav ul li:hover .games-menu {
   .action .action-cards .action-card img {
     max-height: 600px;
     max-width: 337px;
+  }
+}
+
+/*! Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
   }
 }

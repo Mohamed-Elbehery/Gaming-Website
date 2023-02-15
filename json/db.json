@@ -1,0 +1,16 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "gameName": "Chess",
+      "formMessage": "i really like chess and i hope you add it",
+      "formSelect": "strategy"
+    },
+    {
+      "id": 2,
+      "gameName": "League of Legends",
+      "formMessage": "Leagoue of Legends is a 2017-2018 league game played by",
+      "formSelect": "all"
+    }
+  ]
+}
