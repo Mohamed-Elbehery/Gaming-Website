@@ -1,3 +1,4 @@
+//! Header Toggler for Small Screens
 const header = document.querySelector('header');
 const icon = document.querySelector('#header-toggler .fa-solid');
 const headerToggler = document.querySelector('#header-toggler');
@@ -15,3 +16,12 @@ const handleToggleClick = () => {
 }
 
 headerToggler.addEventListener('click', handleToggleClick);
+
+// //! Handling the Contact Us Form
+const gameName = document.querySelector('input[name="game-name"]');
+const formSelect = document.querySelector('#contact-us form select');
+const submit = document.querySelector('button.form-btn');
+
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+});
