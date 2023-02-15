@@ -329,7 +329,7 @@ header nav ul li:hover .games-menu {
   transform: skew(90deg);
   transform-origin: bottom;
 }
-/*! Racing and Zombie Styles */
+/*! Racing, Zombie and Action Styles */
 .racing,
 .zombie,
 .action {
@@ -410,12 +410,12 @@ header nav ul li:hover .games-menu {
   padding-bottom: 5rem;
 }
 
-/* Zombie Middle Image */
 .zombie .zombie-cards .zombie-card {
   height: 675px;
   position: relative;
 }
 
+/* Zombie Middle Image */
 .zombie .zombie-cards .zombie-card.middle-zombie {
   height: 800px;
 }
@@ -426,12 +426,12 @@ header nav ul li:hover .games-menu {
   }
 }
 
-/* Action Middle Image */
 .action .action-cards .action-card {
   height: 800px;
   position: relative;
 }
 
+/* Action Middle Image */
 .action .action-cards .action-card img {
   height: 100%;
   width: 450px;
