@@ -5,8 +5,10 @@
   --white-color: #fff;
   --low-alpha-black: rgba(0, 0, 0, 0.5);
   --main-color: rgb(255, 48, 127);
+  --secondary-color: rgb(184, 38, 94);
   --transition-duration: 0.5s;
-  --big-transition-duration: 1s;
+  --big-transition-duration: 1.5s;
+  --section-padding: 2rem 0;
 }
 
 /*! General Rules */
@@ -15,6 +17,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Jua", Arial;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,14 +57,38 @@ i {
 .btn:hover {
   background-color: var(--main-color);
 }
+
+.main-title {
+  color: white;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.main-title h2 {
+  font-size: 3.5rem;
+  width: fit-content;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 1.5rem;
+}
+
+.main-title h2::after {
+  content: "";
+  position: absolute;
+  left: calc((100% - 170%) / 2);
+  bottom: 0;
+  width: 170%;
+  height: 2px;
+  background-color: rgb(255, 115, 0);
+}
 /*! Header Styles */
 header {
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: var(--low-alpha-black);
   width: 12.5%;
+  background-color: var(--low-alpha-black);
   transition: var(--big-transition-duration);
   padding-bottom: 20rem;
   z-index: 999;
@@ -67,6 +97,11 @@ header {
 header:hover {
   width: 25%;
   padding-bottom: 0;
+}
+
+header span {
+  opacity: 0;
+  transition: var(--transition-duration);
 }
 
 header nav {
@@ -80,7 +115,12 @@ header nav {
 
 header nav .logo img {
   width: 175px;
+  transition: var(--big-transition-duration);
   animation: rotate 0.8s infinite alternate;
+}
+
+header:hover nav .logo img {
+  width: 250px;
 }
 
 header nav ul {
@@ -113,10 +153,9 @@ header nav ul li .games-menu {
 }
 
 header nav ul li:hover .games-menu {
-  pointer-events: visible;
   opacity: 1;
+  pointer-events: all;
 }
-
 /*! Landing Styles */
 .landing {
   height: 100vh;
@@ -158,6 +197,78 @@ header nav ul li:hover .games-menu {
   font-size: 1.1rem;
   margin: 1rem 0;
 }
+
+.landing .overlay .landing-content .btn {
+  margin-top: 0.4rem;
+  display: inline-block;
+}
+
+.landing .overlay .landing-content .btn:active {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+/*! Game Play Styles */
+.gameplay {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.gameplay .gameplay-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gameplay .gameplay-cards .gameplay-card {
+  position: relative;
+  overflow: hidden;
+  height: 1000px;
+}
+
+.gameplay .gameplay-cards .gameplay-card img {
+  height: 100%;
+}
+
+.gameplay .gameplay-cards .gameplay-card::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  z-index: 1;
+  left: -25%;
+  right: 0;
+  top: 0;
+  bottom: 50%;
+  background: linear-gradient(90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1));
+  color: var(--white-color);
+  transition: var(--big-transition-duration);
+}
+
+.gameplay .gameplay-cards .gameplay-card::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  z-index: 1;
+  left: -25%;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  background: linear-gradient(90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1));
+  color: var(--white-color);
+  transition: var(--big-transition-duration);
+}
+
+.gameplay .gameplay-cards .gameplay-card:hover::after {
+  transform-origin: top;
+  transform: skew(90deg);
+}
+
+.gameplay .gameplay-cards .gameplay-card:hover::before {
+  transform: skew(90deg);
+  transform-origin: bottom;
+}
 /*! Animations */
 @keyframes rotate {
   0% {
@@ -176,6 +287,61 @@ header nav ul li:hover .games-menu {
   }
 
   header nav .logo img {
-    width: 150px;
+    width: 125px;
+  }
+
+  header:hover nav .logo img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  header {
+    transform: translateX(100%);
+    width: 40%;
+  }
+
+  header:hover {
+    width: 40%;
+    padding-bottom: 7.5rem;
+  }
+
+  header nav ul li .games-menu {
+    z-index: 999;
+    pointer-events: none;
+    padding: 0 0 2rem 0;
+  }
+
+  header nav ul li:hover .games-menu {
+    pointer-events: initial;
+  }
+
+  header span {
+    opacity: 1;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 6rem;
+    z-index: -1;
+  }
+
+  header span i {
+    color: gray;
+  }
+
+  .landing .overlay .landing-content h1 {
+    font-size: 2rem;
+  }
+
+  .landing .overlay .landing-content p {
+    width: 90%;
+    margin: 1.2rem auto;
+    line-height: 1.9;
+  }
+
+  .landing .overlay .landing-content .btn {
+    font-size: 1rem;
   }
 }
