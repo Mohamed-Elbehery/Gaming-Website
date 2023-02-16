@@ -310,7 +310,6 @@ nav ul li:hover .mini-bar {
   position: relative;
   overflow: hidden;
   height: 1000px;
-  min-width: 337px;
 }
 
 .gameplay .gameplay-cards .gameplay-card img {
@@ -514,7 +513,7 @@ nav ul li:hover .mini-bar {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 993px) {
   .contact-us {
     min-height: 100vh;
     padding: var(--section-padding);
@@ -607,7 +606,7 @@ nav ul li:hover .mini-bar {
   }
 
   nav:hover img {
-    width: 200px;
+    width: 130px;
   }
 
   .gameplay .gameplay-cards .gameplay-card {
@@ -640,10 +639,10 @@ nav ul li:hover .mini-bar {
     opacity: 1;
     position: absolute;
     right: 100%;
-    top: 45%;
+    top: 41%;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 6rem;
+    font-size: 4rem;
     z-index: -1;
   }
 
@@ -656,18 +655,19 @@ nav ul li:hover .mini-bar {
   }
 
   .caption h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .caption p {
     width: 90%;
     margin: 1.2rem auto;
     line-height: 1.9;
+    font-size: 1.5rem;
   }
 
   .caption .btn {
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -686,6 +686,50 @@ nav ul li:hover .mini-bar {
   .action .action-cards .action-card img {
     max-height: 600px;
     max-width: 337px;
+  }
+
+  .caption h2 {
+    font-size: 1.5rem;
+  }
+
+  .caption p {
+    width: 100%;
+    margin: 1 auto;
+    line-height: 1.9;
+    font-size: 0.8rem;
+  }
+
+  .caption .btn {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .racing .racing-cards .racing-card,
+  .racing .racing-cards .racing-card.middle-car,
+  .zombie .zombie-cards .zombie-card,
+  .zombie .zombie-cards .zombie-card.middle-zombie,
+  .action .action-cards .action-card,
+  .action .action-cards .action-card.middle-action {
+    max-height: 450px;
+    max-width: 250px;
+  }
+
+  .racing .racing-cards .racing-card img,
+  .action .action-cards .action-card img {
+    max-height: 450px;
+    max-width: 250px;
+  }
+
+  .gameplay .gameplay-cards .gameplay-card {
+    height: 450px;
+    max-width: 250px;
+  }
+
+  .gameplay .gameplay-cards .gameplay-card img {
+    height: 450px;
+    max-width: 250px;
   }
 }
 
