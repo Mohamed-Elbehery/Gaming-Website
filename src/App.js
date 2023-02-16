@@ -15,13 +15,14 @@ const handleToggleClick = () => {
   }
 }
 
+// event listener
 headerToggler.addEventListener('click', handleToggleClick);
 
 // //! Handling the Contact Us Form
+const query = {};
 const gameName = document.querySelector('input[name="gameName"]');
 const formSelect = document.querySelector('select[name="formSelect"]');
 const formMessage = document.querySelector('textarea[name="formMessage"]');
-const query = {};
 const submit = document.querySelector('button.form-btn');
 
 const handleSubmit = async (e) => {
@@ -33,18 +34,39 @@ const handleSubmit = async (e) => {
     gameName.value = formMessage.value = '';
     formSelect.value = 'Select Game Category';
 
-    console.log(query);
-
-    const res = await fetch("http://localhost:3000/games", {
+    await fetch("http://localhost:3000/games", {
       method: "POST",
       body: JSON.stringify(query),
       headers: {
         "Content-Type": "application/json; charset=UTF-8"
       }
     });
-    const data = await res.json();
-    console.log(data);
   }
 }
 
+// event listener
 submit.addEventListener('click', handleSubmit);
+
+//! Fetching and displaying in the table
+let tbody = document.querySelector('table tbody');
+const games = [];
+
+const fetchingGames = async () => { // Fetching all the games
+  const res = await fetch("http://localhost:3000/games");
+  const data = await res.json();
+  games.push(...data);
+
+  games.map((game) => {
+    tbody.innerHTML += 
+    `<tr>
+      <td align="center">${game?.id}</td>
+      <td align="left">${game?.gameName}</td>
+      <td align="right">${game?.formSelect}</td>
+    </tr>`
+  })
+  
+}
+
+fetchingGames();
+
+console.log(games);
