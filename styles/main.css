@@ -56,11 +56,11 @@ i {
   cursor: pointer;
   font-size: 1.1rem;
   position: relative;
+  transition: var(--big-transition-duration);
 }
 
-.btn:not(:hover),
-.btn-primary:not(:hover) {
-  animation: border-animation 2.5s;
+.go-btn:not(:hover) {
+  animation: border-animation 2s;
 }
 
 .btn:hover {
@@ -138,95 +138,100 @@ textarea:focus::placeholder {
     width: 100%;
   }
 }
-/*! Intro Styles */
-.intro {
-  position: absolute;
-  inset: 0;
-  background-color: var(--main-color);
-  z-index: 1000;
+/*! Header Styles */
+/* Start Fatma Hazem Section */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 12%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  z-index: 9;
+  transition: 3.5s;
 }
 
-.intro-content {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+@media screen and (min-width: 994px) {
+  nav {
+    transform: translateX(0) !important;
+  }
+}
+nav ul {
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
   text-align: center;
 }
 
-.intro-content h1 {
-  color: var(--white-color);
+nav ul li {
+  list-style-type: none;
+  cursor: pointer;
 }
 
-.intro-content .btn {
-  border-color: var(--white-color);
-  transition: var(--transition-duration);
-  margin-top: 1rem;
+nav ul li:hover {
+  color: rgba(247, 7, 118, 1);
 }
 
-.intro-content .btn:hover {
-  background-color: white;
-  color: var(--main-color);
-}
-/*! Header Styles */
-header {
+nav {
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
   width: 11%;
   background-color: var(--low-alpha-black);
-  transition: var(--big-transition-duration);
+  transition: var(--big-transition-duration-skew);
   padding-bottom: 20rem;
   z-index: 999;
 }
 
-header span {
+nav span {
   opacity: 0;
   transition: var(--transition-duration);
 }
 
-header:hover {
+nav:hover {
   width: 25%;
   padding-bottom: 0;
 }
 
-header nav {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-header nav .logo img {
-  width: 175px;
+nav img {
+  width: 100px;
   transition: var(--big-transition-duration);
   animation: rotate 0.8s infinite alternate;
 }
 
-header:hover nav .logo img {
-  width: 250px;
+nav:hover img {
+  width: 200px;
 }
 
-header nav ul {
+nav ul {
   width: 100%;
   text-align: center;
 }
 
-header nav ul li {
+nav ul li:hover > a,
+nav ul li:hover > i {
+  color: var(--main-color);
+}
+
+nav ul li {
   margin-top: 2rem;
   position: relative;
   cursor: pointer;
 }
 
-header nav ul li:hover > a,
-header nav ul li:hover > i {
-  color: var(--main-color);
+.mini-bar li {
+  line-height: 70px;
 }
 
-header nav ul li .games-menu {
+.games:hover .mini-bar {
+  opacity: 1;
+}
+
+nav ul li .mini-bar {
   position: absolute;
   right: 100%;
   top: 0;
@@ -239,61 +244,41 @@ header nav ul li .games-menu {
   pointer-events: none;
 }
 
-header nav ul li:hover .games-menu {
+nav ul li:hover .mini-bar {
   opacity: 1;
   pointer-events: all;
 }
+/* End Fatma Hazem Section */
 /*! Landing Styles */
-.landing {
+/* Start Fatma Hazem Section */
+.background {
+  width: 100%;
+}
+.background img {
+  width: 100%;
   height: 100vh;
-  background-image: url("../assets/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
 }
-
-.landing .overlay {
+.overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    60deg,
-    rgba(255, 48, 127, 0.65),
-    rgba(0, 0, 0, 0.9)
-  );
-  color: var(--white-color);
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  text-align: center;
+  background-image: linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
 }
-
-.landing .overlay .landing-content {
+.caption span {
+  color: rgba(247, 7, 118, 1);
+}
+.caption {
+  color: white;
+  line-height: 43px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
 }
-
-.landing .overlay .landing-content h1 {
-  font-size: 2.5rem;
-}
-
-.landing .overlay .landing-content h1 span {
-  color: var(--main-color);
-}
-
-.landing .overlay .landing-content p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-}
-
-.landing .overlay .landing-content .btn {
-  margin-top: 0.4rem;
-  display: inline-block;
-}
-
-.landing .overlay .landing-content .btn:active {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
-}
+/* End Fatma Hazem Section */
 /*! Game Play Styles */
 .gameplay {
   min-height: 100vh;
@@ -331,6 +316,7 @@ header nav ul li:hover .games-menu {
   }
 }
 
+/*! Start Mohamed Moaaz */
 .gameplay .gameplay-cards .gameplay-card::after {
   content: "";
   position: absolute;
@@ -366,6 +352,8 @@ header nav ul li:hover .games-menu {
   transform-origin: bottom;
   transform: skew(90deg);
 }
+/*! End Mohamed Moaaz */
+
 /*! Racing, Zombie and Action Styles */
 .racing,
 .zombie,
@@ -410,6 +398,7 @@ header nav ul li:hover .games-menu {
   height: 100%;
 }
 
+/*! Start Mohamed Moaaz */
 .racing .racing-cards .racing-card .overlay,
 .zombie .zombie-cards .zombie-card .overlay,
 .action .action-cards .action-card .overlay {
@@ -442,6 +431,7 @@ header nav ul li:hover .games-menu {
 .action .action-cards .action-card:hover .btn {
   opacity: 1;
 }
+/*! End Mohamed Moaaz */
 
 .action {
   padding-bottom: 5rem;
@@ -595,16 +585,16 @@ header nav ul li:hover .games-menu {
 
 /*todo Media Queries */
 @media screen and (min-width: 300px) and (max-width: 1366px) {
-  header {
+  nav {
     padding-bottom: 7.5rem;
     width: 15%;
   }
 
-  header nav .logo img {
+  nav img {
     width: 125px;
   }
 
-  header:hover nav .logo img {
+  nav:hover img {
     width: 200px;
   }
 
@@ -614,27 +604,27 @@ header nav ul li:hover .games-menu {
 }
 
 @media screen and (max-width: 993px) {
-  header {
+  nav {
     transform: translateX(100%);
     width: 40%;
   }
 
-  header:hover {
+  nav:hover {
     width: 40%;
     padding-bottom: 7.5rem;
   }
 
-  header nav ul li .games-menu {
+  nav ul li .mini-bar {
     z-index: 999;
     pointer-events: none;
     padding: 0 0 2rem 0;
   }
 
-  header nav ul li:hover .games-menu {
+  nav ul li:hover .mini-bar {
     pointer-events: initial;
   }
 
-  header span {
+  nav span {
     opacity: 1;
     position: absolute;
     right: 100%;
@@ -645,7 +635,7 @@ header nav ul li:hover .games-menu {
     z-index: -1;
   }
 
-  header span i {
+  nav span i {
     color: gray;
   }
 
@@ -694,6 +684,9 @@ header nav ul li:hover .games-menu {
 
 @keyframes border-animation {
   0% {
+    border-color: var(--main-color);
+  }
+  50% {
     border-color: var(--white-color);
   }
   100% {

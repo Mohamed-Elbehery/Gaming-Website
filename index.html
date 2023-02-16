@@ -14,40 +14,38 @@
   </head>
   <body>
     <!--! Header Section -->
-    <header>
-      <nav>
-        <div class="logo">
-          <a href="#"><img src="./assets/logo.png" alt="logo" /></a>
-        </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li>
-            <a>Games</a> <i class="fa-solid fa-caret-down"></i>
-            <ul class="games-menu">
-              <li><a href="#racing">Racing</a></li>
-              <li><a href="#zombie">Zombie</a></li>
-              <li><a href="#action">Action</a></li>
-            </ul>
-          </li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
-          <li><a href="#requested-games">Requested Games</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <a href="#">
+        <img src="assets/logo.png" />
+      </a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+          <a>Games</a> <i class="fa-solid fa-caret-down"></i>
+          <ul class="mini-bar">
+            <li><a href="#racing">Racing</a></li>
+            <li><a href="#zombie">Zombie</a></li>
+            <li><a href="#action">Action</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
       <span id="header-toggler"><i class="fa-solid fa-caret-left"></i></span>
-    </header>
-    <section class="landing">
+    </nav>
+    <div class="background">
+      <img src="assets/bg.jpg" />
       <div class="overlay">
-        <div class="landing-content">
-          <h1>Welcome to our <span>Games</span></h1>
+        <div class="caption">
+          <h2>Welcome to our<span> Games</span></h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo
-            veritatis asperiores itaque numquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, fuga
+            asperiores ad nihil officiis dolorum obcaecati saepe culpa
           </p>
-          <a href="#gameplay" class="btn">Go To Play</a>
+          <a href="#gameplay" class="btn go-btn">Go to Play</a>
         </div>
       </div>
-    </section>
+    </div>
     <section class="gameplay" id="gameplay">
       <div class="main-title">
         <h2>Game Play</h2>
@@ -158,18 +156,6 @@
         ></textarea>
         <button class="btn form-btn">Send Request</button>
       </form>
-    </section>
-    <section class="requested-games" id="requested-games">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Game</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
     </section>
     <script
       src="https://kit.fontawesome.com/77380724c1.js"
