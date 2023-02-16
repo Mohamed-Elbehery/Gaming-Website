@@ -183,7 +183,6 @@ nav {
   width: 11%;
   background-color: var(--low-alpha-black);
   transition: var(--big-transition-duration-skew);
-  padding-bottom: 20rem;
   z-index: 999;
 }
 
@@ -219,8 +218,8 @@ nav ul li:hover > i {
 
 nav ul li {
   margin-top: 2rem;
-  position: relative;
   cursor: pointer;
+  position: relative;
 }
 
 .mini-bar li {
