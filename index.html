@@ -13,29 +13,40 @@
     <title>Template 3</title>
   </head>
   <body>
-    <!--! Header Section -->
-    <!-- Fatma Hazem -->
-    <nav>
-      <a href="#">
-        <img src="assets/logo.png" />
-      </a>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li>
-          <a>Games</a> <i class="fa-solid fa-caret-down"></i>
-          <ul class="mini-bar">
-            <li><a href="#racing">Racing</a></li>
-            <li><a href="#zombie">Zombie</a></li>
-            <li><a href="#action">Action</a></li>
-          </ul>
-        </li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact-us">Contact Us</a></li>
-      </ul>
-      <span id="header-toggler"><i class="fa-solid fa-caret-left"></i></span>
-    </nav>
-    <div class="background">
-      <img src="assets/bg.jpg" />
+    <!--! Particles Plugin -->
+    <div id="particles-js"></div>
+    <!--! Loading Animation -->
+    <div class="loading">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!--!------------------------------------------------------- Header Start -------------------------------------------------------!-->
+    <header>
+      <nav>
+        <a href="#">
+          <img src="assets/logo.png" />
+        </a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a>Games</a> <i class="fa-solid fa-caret-down"></i>
+            <ul class="mini-bar">
+              <li><a href="#gameplay">Gameplay</a></li>
+              <li><a href="#racing">Racing</a></li>
+              <li><a href="#zombie">Zombie</a></li>
+              <li><a href="#action">Action</a></li>
+            </ul>
+          </li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+        <span id="header-toggler"><i class="fa-solid fa-caret-left"></i></span>
+      </nav>
+    </header>
+    <!--!------------------------------------------------------- Hero Start -------------------------------------------------------!-->
+    <section class="background">
       <div class="overlay">
         <div class="caption">
           <h2>Welcome to our<span> Games</span></h2>
@@ -43,11 +54,11 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, fuga
             asperiores ad nihil officiis dolorum obcaecati saepe culpa
           </p>
-          <a href="#gameplay" class="btn go-btn">Go to Play</a>
+          <!-- <a href="#gameplay" class="btn go-btn">Go to Play</a> -->
         </div>
       </div>
-    </div>
-    <!-- Mohamed El-Behery -->
+    </section>
+    <!--!------------------------------------------------------- Gameplay Start -------------------------------------------------------!-->
     <section class="gameplay" id="gameplay">
       <div class="main-title">
         <h2>Game Play</h2>
@@ -70,73 +81,138 @@
         </div>
       </div>
     </section>
-    <!--! Racing Section -->
+    <!--!------------------------------------------------------- Racing Start -------------------------------------------------------!-->
     <section class="racing" id="racing">
       <div class="main-title">
         <h2>Racing</h2>
       </div>
       <div class="racing-cards">
-        <div class="racing-card">
-          <img src="./assets/ra2.jfif" alt="car" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Need For Speed</button>
-        </div>
-        <div class="racing-card middle-car">
-          <img src="./assets/re1.jfif" alt="car" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Asphalt 9</button>
-        </div>
-        <div class="racing-card">
-          <img src="./assets/re3.jfif" alt="car" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Asphalt 9 Block Wave</button>
-        </div>
+        <a
+          href="https://www.ea.com/games/need-for-speed/need-for-speed"
+          target="_blank"
+        >
+          <div class="racing-card">
+            <img src="./assets/ra2.jfif" alt="car" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Need For Speed</button>
+          </div>
+        </a>
+        <a href="https://asphaltlegends.com/" target="_blank">
+          <div class="racing-card middle-car">
+            <img src="./assets/re1.jfif" alt="car" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Asphalt 9</button>
+          </div>
+        </a>
+        <a href="https://www.imdb.com/title/tt10822822/" target="_blank">
+          <div class="racing-card">
+            <img src="./assets/re3.jfif" alt="car" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Asphalt 9 Block Wave</button>
+          </div>
+        </a>
       </div>
     </section>
+    <!--!------------------------------------------------------- Zombie Start -------------------------------------------------------!-->
     <section class="zombie" id="zombie">
       <div class="main-title">
         <h2>Zombie</h2>
       </div>
       <div class="zombie-cards">
-        <div class="zombie-card">
-          <img src="./assets/zo1.jfif" alt="zombie-wave1" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Zombie Wave l</button>
-        </div>
-        <div class="zombie-card middle-zombie">
-          <img src="./assets/zo2.jfif" alt="zombie-wave2" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Zombie Wave ll</button>
-        </div>
-        <div class="zombie-card">
-          <img src="./assets/zo3.jfif" alt="zombie-wave3" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Zombie Wave lll</button>
-        </div>
+        <a
+          href="https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/"
+          target="_blank"
+        >
+          <div class="zombie-card">
+            <img src="./assets/zo1.jfif" alt="zombie-wave1" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Zombie Wave l</button>
+          </div>
+        </a>
+        <a
+          href="https://www.playstation.com/en-us/games/the-last-of-us-part-ii/"
+          target="_blank"
+        >
+          <div class="zombie-card middle-zombie">
+            <img src="./assets/zo2.jfif" alt="zombie-wave2" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Zombie Wave ll</button>
+          </div>
+        </a>
+        <a
+          href="https://omggamer.com/last-of-us-3-release-date-news-trailer-rumors/"
+          target="_blank"
+        >
+          <div class="zombie-card">
+            <img src="./assets/zo3.jfif" alt="zombie-wave3" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Zombie Wave lll</button>
+          </div>
+        </a>
       </div>
     </section>
+    <!--!------------------------------------------------------- Action Start -------------------------------------------------------!-->
     <section class="action" id="action">
       <div class="main-title">
         <h2>Action</h2>
       </div>
       <div class="action-cards">
-        <div class="action-card">
-          <img src="./assets/ac1.jfif" alt="action-wave1" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">Tomb Raider</button>
+        <a
+          href="https://store.steampowered.com/app/750920/Shadow_of_the_Tomb_Raider_Definitive_Edition/"
+          target="_blank"
+        >
+          <div class="action-card">
+            <img src="./assets/ac1.jfif" alt="action-wave1" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">Tomb Raider</button>
+          </div>
+        </a>
+        <a href="https://www.rockstargames.com/gta-v" target="_blank">
+          <div class="action-card middle-action">
+            <img src="./assets/ac2.jfif" alt="action-wave2" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">GTA V</button>
+          </div>
+        </a>
+        <a
+          href="https://store.steampowered.com/app/1593500/God_of_War/"
+          target="_blank"
+        >
+          <div class="action-card">
+            <img src="./assets/ac3.jfif" alt="action-wave3" />
+            <div class="overlay"></div>
+            <button class="btn btn-primary">God Of War 4</button>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!--!------------------------------------------------------- About Us Start -------------------------------------------------------!-->
+    <section class="about" id="about">
+      <div class="main-title">
+        <h2>About Us</h2>
+      </div>
+      <div class="about-content">
+        <div>
+          <h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            accusamus aut laboriosam laborum nam ut, praesentium, minima rem
+            quidem inventore aspernatur dolores harum similique incidunt sint at
+            cupiditate eligendi delectus.
+          </h3>
+          <h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            accusamus aut laboriosam laborum nam ut, praesentium, minima rem
+            quidem inventore aspernatur dolores harum similique incidunt sint at
+            cupiditate eligendi delectus.
+          </h3>
         </div>
-        <div class="action-card middle-action">
-          <img src="./assets/ac2.jfif" alt="action-wave2" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">GTA V</button>
-        </div>
-        <div class="action-card">
-          <img src="./assets/ac3.jfif" alt="action-wave3" />
-          <div class="overlay"></div>
-          <button class="btn btn-primary">God Of War 4</button>
+        <div>
+          <img src="./assets/about1.jpg" alt="bleach-kurosaki" />
+          <img src="./assets/about2.jpg" alt="bleach-kurosaki" />
         </div>
       </div>
     </section>
+    <!--!------------------------------------------------------- Contact Us Start -------------------------------------------------------!-->
     <section class="contact-us" id="contact-us">
       <form>
         <div class="contacts-title">
@@ -163,6 +239,8 @@
       src="https://kit.fontawesome.com/77380724c1.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./src/particles.js"></script>
+    <script src="./src/jquery.js"></script>
     <script src="./src/App.js"></script>
   </body>
 </html>

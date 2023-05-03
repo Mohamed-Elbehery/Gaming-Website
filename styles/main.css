@@ -29,6 +29,7 @@ html {
 
 body {
   background-color: rgb(35, 108, 150);
+  /* overflow: hidden; */
 }
 
 ul li {
@@ -138,6 +139,75 @@ textarea:focus::placeholder {
     width: 100%;
   }
 }
+
+/*! Particles Plugin */
+#particles-js {
+  position: relative;
+  z-index: 999;
+  height: 99vh;
+}
+
+/*! Loading Animation */
+.loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  z-index: 9999;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
 /*! Header Styles */
 /* Start Fatma Hazem Section */
 nav {
@@ -266,7 +336,7 @@ nav ul li:hover .mini-bar {
   right: 0px;
   left: 0px;
   text-align: center;
-  background-image: linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+  background-color: black;
 }
 
 .caption span {
@@ -326,7 +396,6 @@ nav ul li:hover .mini-bar {
   }
 }
 
-/*! Start Mohamed Moaaz */
 .gameplay .gameplay-cards .gameplay-card::after {
   content: "";
   position: absolute;
@@ -397,8 +466,17 @@ nav ul li:hover .mini-bar {
   height: 675px;
 }
 @media screen and (max-width: 1460px) {
+  .racing .racing-cards .racing-card {
+    height: 500px;
+    position: relative;
+  }
+
   .racing .racing-cards .racing-card.middle-car {
-    height: 800px;
+    height: 450px;
+  }
+
+  .racing .racing-cards .racing-card img {
+    width: 100%;
   }
 }
 
@@ -442,7 +520,6 @@ nav ul li:hover .mini-bar {
   opacity: 1;
 }
 /*! End Mohamed Moaaz */
-
 .action {
   padding-bottom: 5rem;
 }
@@ -458,8 +535,12 @@ nav ul li:hover .mini-bar {
 }
 @media screen and (max-width: 1460px) {
   .zombie .zombie-cards .zombie-card {
-    height: 800px;
+    height: 500px;
     position: relative;
+  }
+
+  .zombie .zombie-cards .zombie-card.middle-zombie {
+    height: 550px;
   }
 }
 
@@ -478,15 +559,73 @@ nav ul li:hover .mini-bar {
   transform: translateY(35px);
 }
 @media screen and (max-width: 1460px) {
-  .action .action-cards .action-card.middle-action {
-    transform: translateY(0);
+  .action .action-cards .action-card {
+    height: 500px;
+  }
+
+  .action .action-cards .action-card img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* About Us Styles */
+.about {
+  padding: var(--section-padding);
+}
+
+.about .about-content div:has(h3) {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.about .about-content div h3 {
+  text-align: center;
+  color: white;
+}
+
+.about .about-content div:has(img) {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.about .about-content div img {
+  width: 40%;
+}
+
+@media screen and (max-width: 767px) {
+  .about .about-content div h3 {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .about .about-content div:has(h3) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about .about-content div:has(img) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about .about-content div img {
+    width: 75%;
   }
 }
 /* Contact Us Styles */
 .contact-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   padding: var(--section-padding);
-  padding-top: 20vh;
 }
 
 .contact-us form {
@@ -502,11 +641,6 @@ nav ul li:hover .mini-bar {
 }
 
 @media screen and (max-width: 1460px) {
-  .contact-us {
-    min-height: 100vh;
-    padding: var(--section-padding);
-  }
-
   .contact-us form {
     width: 60%;
   }
@@ -560,41 +694,12 @@ nav ul li:hover .mini-bar {
   border-color: var(--main-color);
 }
 
-/* Requested Games */
-.requested-games {
-  min-height: 100vh;
-  padding: var(--section-padding);
-}
-
-.requested-games table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.requested-games table thead tr th {
-  display: inline-block;
-  border-bottom: 2px solid var(--main-color);
-  color: white;
-  font-size: 1.5rem;
-  margin-right: 3rem;
-  font-style: italic;
-  padding-bottom: 0.325rem;
-}
-
-.requested-games table tbody tr td {
-  display: inline-block;
-  color: white;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-right: 2.5rem;
-  text-align: right;
-}
-
 /*todo Media Queries */
 @media screen and (min-width: 300px) and (max-width: 1366px) {
+  html {
+    font-size: 13px;
+  }
+
   nav {
     padding-bottom: 7.5rem;
     width: 15%;
@@ -610,6 +715,7 @@ nav ul li:hover .mini-bar {
 
   .gameplay .gameplay-cards .gameplay-card {
     height: 600px;
+    aspect-ratio: 9 / 16;
   }
 }
 
