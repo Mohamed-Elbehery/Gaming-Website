@@ -577,25 +577,31 @@ nav ul li:hover .mini-bar {
   margin-top: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
 }
 
 .about .about-content div h3 {
   text-align: center;
   color: white;
+  flex-basis: 38%;
 }
 
 .about .about-content div:has(img) {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  width: 90%;
+  margin: 0 auto;
   margin-top: 3rem;
   text-align: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .about .about-content div img {
-  width: 40%;
+  width: 35%;
+  aspect-ratio: 16 / 9;
 }
 
 @media screen and (max-width: 767px) {
