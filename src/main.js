@@ -80,7 +80,7 @@ const handleSubmit = (e) => {
 //! Event Listeners
 headerToggler.addEventListener("click", handleToggleClick);
 contactForm.addEventListener("submit", handleSubmit);
-window.addEventListener("load", () => this.scrollTo(0, 0));
+window.addEventListener("load", () => window.scrollTo(0, 0));
 
 //! Particles Plugin
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
