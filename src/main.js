@@ -83,24 +83,26 @@ const handleSubmit = (e) => {
 const windowLoad = () => {
   window.scrollTo(0, 0);
 
-  localStorage.setItem(
-    "user",
-    JSON.stringify({
-      isLoggedIn: false,
-      name: "",
-      email: "",
-      imgURL: "",
-    })
-  );
-
-  if (JSON.parse(localStorage.user).isLoggedIn) {
-    loginBtn.innerHTML = `Welcome, <span>${
-      JSON.parse(localStorage.user).name
-    }</span>`;
-    logoutBtn.style.display = "block";
+  if (!localStorage.user) {
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        isLoggedIn: false,
+        name: "",
+        email: "",
+        imgURL: "",
+      })
+    );
   } else {
-    loginBtn.innerHTML = "Login";
-    logoutBtn.style.display = "none";
+    if (JSON.parse(localStorage.user).isLoggedIn) {
+      loginBtn.innerHTML = `Welcome, <span>${
+        JSON.parse(localStorage.user).name
+      }</span>`;
+      logoutBtn.style.display = "block";
+    } else {
+      loginBtn.innerHTML = "Login";
+      logoutBtn.style.display = "none";
+    }
   }
 };
 
