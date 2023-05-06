@@ -282,12 +282,15 @@
       const handleLogin = async () => {
         try {
           await signInWithPopup(auth, provider);
-          await localStorage.setItem("user", {
-            isLoggedIn: true,
-            name: auth?.currentUser?.displayName,
-            email: auth?.currentUser?.email,
-            imgURL: auth?.currentUser?.photoURL,
-          });
+          await localStorage.setItem(
+            "user",
+            JSON.stringify({
+              isLoggedIn: true,
+              name: auth?.currentUser?.displayName,
+              email: auth?.currentUser?.email,
+              imgURL: auth?.currentUser?.photoURL,
+            })
+          );
 
           window.load();
         } catch (err) {
@@ -298,12 +301,15 @@
       const handleLogout = async () => {
         try {
           await signOut(auth, provider);
-          await localStorage.setItem("user", {
-            isLoggedIn: false,
-            name: "",
-            email: "",
-            imgURL: "",
-          });
+          await localStorage.setItem(
+            "user",
+            JSON.stringify({
+              isLoggedIn: false,
+              name: "",
+              email: "",
+              imgURL: "",
+            })
+          );
 
           window.load();
         } catch (err) {
