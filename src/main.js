@@ -87,7 +87,7 @@ const windowLoad = () => {
     "user",
     JSON.stringify({
       isLoggedIn: false,
-      name: "test",
+      name: "",
       email: "",
       imgURL: "",
     })
