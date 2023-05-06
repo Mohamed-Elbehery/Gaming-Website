@@ -317,6 +317,15 @@ nav ul li:hover .mini-bar {
   opacity: 1;
   pointer-events: all;
 }
+
+nav ul li a#login-btn span {
+  opacity: 1;
+  color: var(--main-color);
+}
+
+#logout-btn {
+  display: none;
+}
 /* End Fatma Hazem Section */
 /*! Landing Styles */
 /* Start Fatma Hazem Section */
@@ -699,6 +708,8 @@ nav ul li:hover .mini-bar {
 .contact-us form input:hover {
   border-color: var(--main-color);
 }
+
+/*todo Scroll to Top Button */
 
 /*todo Media Queries */
 @media screen and (min-width: 300px) and (max-width: 1366px) {

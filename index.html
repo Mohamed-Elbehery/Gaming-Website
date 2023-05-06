@@ -41,7 +41,10 @@
           </li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact-us">Contact Us</a></li>
-          <li><a href="#login" id="login-btn">Login</a></li>
+          <li>
+            <a href="#login" id="login-btn">Login</a>
+          </li>
+          <li><a href="#logout" id="logout-btn">Logout</a></li>
         </ul>
         <span id="header-toggler"><i class="fa-solid fa-caret-left"></i></span>
       </nav>
@@ -238,6 +241,8 @@
         <button class="btn form-btn">Send Request</button>
       </form>
     </section>
+    <!-- * Scroll to Top Button -->
+    <!-- <i class="fa-solid fa-up" id="scroll-to-top"></i> -->
     <!--* Font Awesome CDN -->
     <script
       src="https://kit.fontawesome.com/77380724c1.js"
@@ -251,6 +256,7 @@
         getAuth,
         GoogleAuthProvider,
         signInWithPopup,
+        signOut,
       } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
       // Your web app's Firebase configuration
@@ -271,14 +277,42 @@
       const provider = new GoogleAuthProvider();
 
       const loginBtn = document.querySelector("#login-btn");
+      const logoutBtn = document.querySelector("#logout-btn");
 
-      const handleLogin = () => {
-        signInWithPopup(auth, provider)
-          .then((res) => console.log("success"))
-          .catch((err) => console.error(err));
+      const handleLogin = async () => {
+        try {
+          await signInWithPopup(auth, provider);
+          await localStorage.setItem("user", {
+            isLoggedIn: true,
+            name: auth?.currentUser?.displayName,
+            email: auth?.currentUser?.email,
+            img: auth?.currentUser?.photoURL,
+          });
+
+          window.load();
+        } catch (err) {
+          console.error(err);
+        }
+      };
+
+      const handleLogout = async () => {
+        try {
+          await signOut(auth, provider);
+          await localStorage.setItem("user", {
+            isLoggedIn: false,
+            name: "",
+            email: "",
+            imgURL: "",
+          });
+
+          window.load();
+        } catch (err) {
+          console.error(err);
+        }
       };
 
       loginBtn.addEventListener("click", handleLogin);
+      logoutBtn.addEventListener("click", handleLogout);
     </script>
     <!--* Email JS CDN + initializer -->
     <script

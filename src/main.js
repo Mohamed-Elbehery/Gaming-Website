@@ -10,6 +10,9 @@ const formEmail = document.querySelector("input[name='userEmail']");
 const formSelect = document.querySelector("select[name='formSelect']");
 const selectDefaultValue = formSelect.value;
 const formMessage = document.querySelector("textarea[name='formMessage']");
+const scrollToTopBtn = document.querySelector("#scroll-to-top");
+const loginBtn = document.querySelector("#login-btn");
+const logoutBtn = document.querySelector("#logout-btn");
 
 //! Header Toggler for Small Screens
 const header = document.querySelector("nav");
@@ -77,10 +80,34 @@ const handleSubmit = (e) => {
   }
 };
 
+const windowLoad = () => {
+  window.scrollTo(0, 0);
+
+  localStorage.setItem(
+    "user",
+    JSON.stringify({
+      isLoggedIn: false,
+      name: "test",
+      email: "",
+      imgURL: "",
+    })
+  );
+
+  if (JSON.parse(localStorage.user).isLoggedIn) {
+    loginBtn.innerHTML = `Welcome, <span>${
+      JSON.parse(localStorage.user).name
+    }</span>`;
+    logoutBtn.style.display = "block";
+  } else {
+    loginBtn.innerHTML = "Login";
+    logoutBtn.style.display = "none";
+  }
+};
+
 //! Event Listeners
 headerToggler.addEventListener("click", handleToggleClick);
 contactForm.addEventListener("submit", handleSubmit);
-window.addEventListener("load", () => window.scrollTo(0, 0));
+window.addEventListener("load", windowLoad);
 
 //! Particles Plugin
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
