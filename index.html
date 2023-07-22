@@ -262,21 +262,24 @@
       const logoutBtn = document.querySelector("#logout-btn");
 
       const handleLogin = async () => {
-        try {
-          await signInWithPopup(auth, provider);
-          await localStorage.setItem(
-            "user",
-            JSON.stringify({
-              isLoggedIn: true,
-              name: auth?.currentUser?.displayName,
-              email: auth?.currentUser?.email,
-              imgURL: auth?.currentUser?.photoURL,
-            })
-          );
+        if (localStorage?.user?.isLoggedIn) return;
+        else {
+          try {
+            await signInWithPopup(auth, provider);
+            await localStorage.setItem(
+              "user",
+              JSON.stringify({
+                isLoggedIn: true,
+                name: auth?.currentUser?.displayName,
+                email: auth?.currentUser?.email,
+                imgURL: auth?.currentUser?.photoURL,
+              })
+            );
 
-          window.location.reload(true);
-        } catch (err) {
-          console.error(err);
+            window.location.reload(true);
+          } catch (err) {
+            console.error(err);
+          }
         }
       };
 
