@@ -37,7 +37,14 @@ ul li {
   transition: var(--transition-duration);
 }
 
-a {
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a,
+button {
   text-decoration: none;
   color: white;
   transition: var(--transition-duration);
@@ -282,7 +289,8 @@ nav ul {
 }
 
 nav ul li:hover > a,
-nav ul li:hover > i {
+nav ul li:hover > i,
+nav ul li:hover > button {
   color: var(--main-color);
 }
 
