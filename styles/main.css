@@ -256,7 +256,7 @@ nav {
   z-index: 999;
 }
 
-nav span {
+nav #header-toggler {
   opacity: 0;
   transition: var(--transition-duration);
 }
@@ -757,7 +757,7 @@ nav ul li a#login-btn span {
     pointer-events: initial;
   }
 
-  nav span {
+  nav #header-toggler {
     opacity: 1;
     position: absolute;
     right: 100%;
