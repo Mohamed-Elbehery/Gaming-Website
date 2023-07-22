@@ -8,7 +8,7 @@ const contactForm = document.querySelector(".contact-us form");
 const formName = document.querySelector("input[name='gameName']");
 const formEmail = document.querySelector("input[name='userEmail']");
 const formSelect = document.querySelector("select[name='formSelect']");
-const selectDefaultValue = formSelect.value;
+const selectDefaultValue = formSelect?.value;
 const formMessage = document.querySelector("textarea[name='formMessage']");
 const scrollToTopBtn = document.querySelector("#scroll-to-top");
 const loginBtn = document.querySelector("#login-btn");
@@ -96,9 +96,9 @@ const windowLoad = () => {
   } else {
     if (JSON.parse(localStorage.user).isLoggedIn) {
       loginBtn.innerHTML = `Welcome, <span>${
-        JSON.parse(localStorage.user).name
+        JSON.parse(localStorage.user).name.split("")[0]
       }</span>`;
-      logoutBtn.style.display = "block";
+      logoutBtn.style.cssText = "display: block; pointer-events: none;";
     } else {
       loginBtn.innerHTML = "Login";
       logoutBtn.style.display = "none";

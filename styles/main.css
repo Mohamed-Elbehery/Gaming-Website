@@ -1,26 +1,26 @@
 /*! Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Explora&family=Jua&display=swap");
-/*! Variables */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"); /*! Variables */
 :root {
   --white-color: #fff;
   --low-alpha-black: rgba(0, 0, 0, 0.5);
   --main-color: rgb(255, 48, 127);
   --secondary-color: rgb(184, 38, 94);
   --linear-gradient-color: 90deg, rgba(255, 48, 127, 0.6), rgba(0, 0, 0, 1);
+  --main-bg: rgb(35, 108, 150);
   --transition-duration: 0.4s;
   --big-transition-duration: 1s;
   --big-transition-duration-skew: 2s;
   --section-padding: 2rem 0;
 }
 
-/*! General Rules */
+/*! Global Rules */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  font-family: "Jua", Arial;
+  font-family: "Montserrat", Arial;
 }
 
 html {
@@ -28,8 +28,8 @@ html {
 }
 
 body {
-  background-color: rgb(35, 108, 150);
-  /* overflow: hidden; */
+  background-color: var(--main-bg);
+  overflow: hidden;
 }
 
 ul li {
@@ -262,7 +262,7 @@ nav span {
 }
 
 nav:hover {
-  width: 22.5%;
+  width: 18%;
   padding-bottom: 0;
 }
 
@@ -273,7 +273,7 @@ nav img {
 }
 
 nav:hover img {
-  width: 200px;
+  width: 170px;
 }
 
 nav ul {
