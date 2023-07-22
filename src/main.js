@@ -96,7 +96,7 @@ const windowLoad = () => {
   } else {
     if (JSON.parse(localStorage.user).isLoggedIn) {
       loginBtn.innerHTML = `Welcome, <span>${
-        JSON.parse(localStorage.user).name.split("")[0]
+        JSON.parse(localStorage.user).name.split(" ")[0]
       }</span>`;
       logoutBtn.style.cssText = "display: block; pointer-events: none;";
     } else {
