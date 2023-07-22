@@ -261,10 +261,8 @@
       const loginBtn = document.querySelector("#login-btn");
       const logoutBtn = document.querySelector("#logout-btn");
 
-      const handleLogin = async () => {
-        if (JSON.parse(localStorage?.user?.isLoggedIn)) {
-          return;
-        } else {
+      const handleLogin = async (e) => {
+        if (!JSON.parse(localStorage.getItem("user")).isLoggedIn) {
           try {
             await signInWithPopup(auth, provider);
             await localStorage.setItem(
